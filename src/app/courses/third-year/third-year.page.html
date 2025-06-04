@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Perfil del usuario -->
+  <div class="profile-container" (click)="goToProfile()">
+    <div class="profile-avatar">
+      <ion-icon name="person"></ion-icon>
+    </div>
+    <div class="profile-name">{{ username }}</div>
+  </div>
+
+  <!-- Botón para volver atrás -->
+  <div class="back-button" (click)="goBack()">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </div>
+
+  <!-- Título de la página -->
+  <h1 class="course-title">Tercer curso</h1>
+
+  <!-- Indicador de carga -->
+  <div class="loading-container" *ngIf="isLoading">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Cargando asignaturas...</p>
+  </div>
+
+  <!-- Grid de asignaturas -->
+  <div class="subjects-grid" *ngIf="!isLoading">
+    <div class="subject-card" *ngFor="let subject of subjects" (click)="goToSubject(subject.id)">
+      <div class="subject-icon" [innerHTML]="subject.icon"></div>
+      <p class="subject-name">{{ subject.name }}</p>
+    </div>
+  </div>
+</ion-content>

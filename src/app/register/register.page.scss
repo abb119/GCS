@@ -1,0 +1,170 @@
+ion-content {
+  --background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.graduation-icon {
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.app-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #C016F5;
+  margin: 0;
+}
+
+.register-form {
+  padding: 0 16px;
+}
+
+.register-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #000000;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+ion-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.custom-input {
+  --background: #ffffff;
+  --border-radius: 4px;
+  --border-color: #d2d2d2;
+  --border-width: 1px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --highlight-height: 0;
+  --color: #000000;
+  margin: 0;
+}
+
+.password-toggle {
+  color: #777;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.terms-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.terms-checkbox {
+  margin-right: 10px;
+  --size: 18px;
+  --background-checked: #6A0DAD;
+  --border-color: #d2d2d2;
+  --border-color-checked: #6A0DAD;
+}
+
+.terms-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.signup-button {
+  --background: #6A0DAD;
+  --background-activated: #5a0b94;
+  --border-radius: 4px;
+  --color: #ffffff;
+  font-weight: 500;
+  height: 48px;
+  margin: 24px 0;
+  
+  &.disabled {
+    --background: #cccccc;
+    --background-activated: #cccccc;
+    opacity: 0.7;
+  }
+}
+
+// Añadir estilos para icono válido/inválido
+.valid-icon {
+  color: #4CAF50;
+}
+
+.invalid-icon {
+  color: #F44336;
+}
+
+// Añadir estilos para el botón de login
+.login-link {
+  --color: #6A0DAD;
+  --background: transparent;
+  --border-style: none;
+  --box-shadow: none;
+  font-weight: 500;
+  font-size: 14px;
+  height: auto;
+  margin: 0;
+  text-transform: none;
+}
+
+// Añadir estilos para los requisitos de contraseña
+.password-requirements {
+  margin-top: 8px;
+  padding-left: 8px;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #F44336;
+  margin-bottom: 4px;
+  
+  ion-icon {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+  
+  &.valid {
+    color: #4CAF50;
+  }
+}
+
+// Modificar el estilo del login-prompt
+.login-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 16px;
+  
+  span {
+    color: #555;
+  }
+  
+  .clickable-link {
+    color: #6A0DAD;
+    font-weight: 500;
+    margin-left: 5px;
+    cursor: pointer;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

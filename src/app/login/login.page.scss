@@ -1,0 +1,135 @@
+ion-content {
+  --background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.graduation-icon {
+  svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.app-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #C016F5;
+  margin: 0;
+}
+
+.login-form {
+  padding: 0 16px;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #000000;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+ion-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.custom-input {
+  --background: #ffffff;
+  --border-radius: 4px;
+  --border-color: #d2d2d2;
+  --border-width: 1px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --highlight-height: 0;
+  --color: #000000;
+  margin: 0;
+}
+
+.valid-icon {
+  color: #4CAF50;
+}
+
+.invalid-icon {
+  color: #F44336;
+}
+
+.password-toggle {
+  color: #777;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 4px;
+}
+
+.forgot-password-button {
+  --color: #333;
+  --padding-start: 0;
+  --padding-end: 0;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: none;
+  height: 20px;
+  margin: 0;
+}
+
+.login-button {
+  --background: #6A0DAD;
+  --background-activated: #5a0b94;
+  --border-radius: 4px;
+  --color: #ffffff;
+  font-weight: 500;
+  height: 48px;
+  margin: 24px 0;
+  
+  &.disabled {
+    --background: #cccccc;
+    --background-activated: #cccccc;
+    opacity: 0.7;
+  }
+}
+
+.register-prompt {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  span {
+    color: #555;
+    margin-right: 2px;
+  }
+}
+
+.register-button {
+  --color: #6A0DAD;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --padding-start: 4px;
+  --padding-end: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  margin: 0;
+  height: 20px;
+}

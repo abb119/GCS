@@ -1,0 +1,359 @@
+ion-content {
+  --background: #f8f8f8;
+}
+
+// Estilos para el header
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button, .menu-button {
+  font-size: 24px;
+  color: #6a0dad;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Estilos para la foto de perfil
+.profile-photo-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #1a73e8;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+// Estilos para información del usuario
+.user-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #42206b;
+  margin-bottom: 10px;
+}
+
+.user-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+// Actualiza el estilo del año actual para resaltarlo más
+.current-year-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.current-year {
+  background: linear-gradient(to right, #f4f4f4, #fff, #f4f4f4);
+  border-radius: 30px;
+  padding: 8px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+  
+  .year-label {
+    color: #666;
+    font-weight: 500;
+    margin-right: 5px;
+  }
+  
+  .year-value {
+    color: #6a0dad;
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
+
+// Estilos para sección de documentos
+.documents-section {
+  margin-top: 20px;
+}
+
+.documents-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #42206b;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.documents-underline {
+  height: 2px;
+  width: 120px;
+  background-color: #ff0066;
+  margin: 0 auto 20px;
+}
+
+.document-list {
+  margin-top: 20px;
+}
+
+// Estilos para el indicador de carga de documentos
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  
+  p {
+    margin-top: 16px;
+    color: #6a0dad;
+    font-size: 16px;
+  }
+}
+
+// Mejorar el estilo de los elementos de documento
+.document-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #6a0dad;
+}
+
+.document-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.document-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.document-details {
+  font-size: 12px;
+  color: #999;
+}
+
+.document-actions {
+  display: flex;
+  gap: 16px;
+  margin-left: 12px;
+}
+
+.download-icon, .delete-icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.download-icon {
+  color: #6a0dad;
+}
+
+.delete-icon {
+  color: #ff0066;
+}
+
+// Estilo para cuando no hay documentos
+.no-documents {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  
+  ion-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+  
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+// Estilos para el menú lateral
+ion-menu {
+  --width: 280px;
+  --background: transparent;
+  
+  &::part(container) {
+    background: linear-gradient(135deg, #f3f3f3, #ffffff);
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.menu-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  
+  .menu-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #e5e5e5;
+    }
+    
+    ion-icon {
+      font-size: 20px;
+      color: #6a0dad;
+    }
+  }
+  
+  .menu-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #6a0dad;
+    margin: 0;
+    background: linear-gradient(to right, #4a0072, #9c27b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.menu-content {
+  flex: 1;
+  padding: 20px 0;
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 0 25px 25px 0;
+    margin-right: 15px;
+    
+    &:hover {
+      background-color: rgba(106, 13, 173, 0.1);
+    }
+    
+    .menu-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #6a0dad, #9c27b0);
+      margin-right: 16px;
+      
+      ion-icon {
+        font-size: 20px;
+        color: white;
+      }
+    }
+    
+    .menu-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+  }
+}
+
+.menu-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .app-info {
+    display: flex;
+    align-items: center;
+    
+    .app-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-right: 10px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    .app-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #6a0dad;
+    }
+  }
+  
+  .app-version {
+    font-size: 12px;
+    color: #999;
+  }
+}
+
+// Asegurar que la animación de apertura es suave
+ion-menu.menu-animated {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}

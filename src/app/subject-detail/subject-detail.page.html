@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Header con botones de navegación -->
+  <div class="header-navigation">
+    <!-- Botón para volver atrás -->
+    <div class="back-button" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </div>
+    
+    <!-- Perfil del usuario -->
+    <div class="profile-container" (click)="goToProfile()">
+      <div class="profile-avatar">
+        <ion-icon name="person"></ion-icon>
+      </div>
+      <div class="profile-name">{{ username }}</div>
+    </div>
+  </div>
+
+  <!-- Contenido de la asignatura -->
+  <div class="subject-content">
+    <!-- Nombre de la asignatura con icono -->
+    <div class="subject-header">
+      <h1 class="subject-title">{{ subjectData.name }}</h1>
+      <div class="subject-icon" [innerHTML]="subjectData.icon"></div>
+    </div>
+
+    <!-- Descripción -->
+    <div class="description-section">
+      <h2 class="section-title">Descripción</h2>
+      <p class="description-text">{{ subjectData.description }}</p>
+    </div>
+
+    <!-- Curso -->
+    <div class="course-section">
+      <span class="course-label">Curso:</span>
+      <span class="course-value">{{ subjectData.course }}</span>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="navigation-buttons">
+      <div class="nav-button teoria-button" (click)="goToTheory()">
+        <h3>Teoría</h3>
+      </div>
+
+      <div class="nav-button practicas-button" (click)="goToPractices()">
+        <h3>Prácticas</h3>
+      </div>
+
+      <div class="nav-button foro-button" (click)="goToForum()">
+        <h3>Foro de difusión</h3>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Header con botón de volver -->
+  <div class="back-button" (click)="goBack()">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </div>
+
+  <!-- Cabecera con título y foto de perfil -->
+  <div class="edit-profile-header">
+    <h1 class="edit-title">Editar Perfil</h1>
+    
+    <!-- Foto de perfil -->
+    <div class="profile-photo-container">
+      <div class="profile-photo">
+        <img [src]="userPhoto || 'assets/default-avatar.png'" alt="Foto de perfil">
+      </div>
+    </div>
+    
+    <!-- Botón para cambiar foto -->
+    <div class="change-photo-button" (click)="changePhoto()">
+      Cambiar Foto
+    </div>
+  </div>
+
+  <!-- Formulario de edición -->
+  <div class="edit-form">
+    <!-- Campo Usuario -->
+    <div class="form-group">
+      <label for="username">Usuario</label>
+      <input 
+        type="text" 
+        id="username" 
+        [(ngModel)]="userData.name" 
+        placeholder="Nombre de usuario">
+    </div>
+    
+    <!-- Campo Descripción -->
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea 
+        id="description" 
+        [(ngModel)]="userData.description" 
+        placeholder="Escribe una breve descripción">
+      </textarea>
+    </div>
+    
+    <!-- Campo Año actual (select) -->
+    <div class="form-group">
+      <label for="currentYear">Año actual</label>
+      <select id="currentYear" [(ngModel)]="userData.currentYear">
+        <option value="Primero">Primero</option>
+        <option value="Segundo">Segundo</option>
+        <option value="Tercero">Tercero</option>
+        <option value="Cuarto">Cuarto</option>
+      </select>
+    </div>
+    
+    <!-- Campo Contraseña -->
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input 
+        type="password" 
+        id="password" 
+        [(ngModel)]="userData.password" 
+        placeholder="Introduce tu nueva contraseña">
+    </div>
+    
+    <!-- Botón de actualizar -->
+    <div class="update-button-container">
+      <button class="update-button" (click)="updateProfile()">Actualizar</button>
+    </div>
+  </div>
+
+  <!-- Campo oculto para cargar archivos -->
+  <input 
+    type="file" 
+    #fileInput 
+    style="display: none" 
+    accept="image/*" 
+    (change)="onFileSelected($event)">
+</ion-content>

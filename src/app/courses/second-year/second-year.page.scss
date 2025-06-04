@@ -1,47 +1,3 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-.container {
-  padding: 20px;
-}
-
-ion-card {
-  margin-top: 20px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
 ion-content {
   --background: #f8f8f8;
 }
@@ -49,16 +5,16 @@ ion-content {
 .profile-container {
   display: flex;
   align-items: center;
-  margin-bottom: 40px; // Aumenta este valor (antes era 20px)
+  margin-bottom: 16px;
   cursor: pointer;
   padding: 8px;
   border-radius: 30px;
   transition: background-color 0.3s ease;
-  margin-top: 20px; // Añade un margen superior también
-
+  margin-top: 16px;
+  
   &:hover {
     background-color: #f0f0f0;
-
+    
     .profile-avatar {
       background-color: #e0e0e0;
     }
@@ -87,62 +43,81 @@ ion-content {
   color: #333;
 }
 
-.courses-title {
-  font-size: 28px;
+.back-button {
+  font-size: 24px;
+  color: #6a0dad;
+  margin-bottom: 16px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.course-title {
+  font-size: 32px;
   font-weight: 700;
-  text-align: center; // Centrar el texto
-  margin-bottom: 30px;
-  margin-top: 30px;
-  // Añadir gradiente al texto
+  color: #42206b;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
   background: linear-gradient(to top, #4a0072, #9c27b0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.courses-grid {
+.subjects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  padding-bottom: 40px;
 }
 
-.course-card {
-  // Cambiar el background-color por un gradiente
+.subject-card {
   background: linear-gradient(to top, #4a0072, #9c27b0);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 30px 20px;
+  padding: 20px 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  height: 160px;
+  height: 150px;
   transition: all 0.3s ease;
-
-  /* Efectos de hover */
+  
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    // Cambiar el gradient al hacer hover para un efecto más intenso
     background: linear-gradient(to top, #380058, #c238db);
-
-    .course-number {
-      transform: scale(1.1);
-    }
   }
 }
 
-.course-number {
-  font-size: 48px;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  transition: transform 0.2s ease;
+.subject-icon {
+  margin-top: 10px;
+  svg, img {
+    width: 50px;
+    height: 50px;
+  }
 }
 
-.course-name {
+.subject-name {
   font-size: 14px;
   color: white;
-  margin: 8px 0 0 0;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  
+  p {
+    margin-top: 16px;
+    color: #6a0dad;
+    font-size: 16px;
+  }
 }

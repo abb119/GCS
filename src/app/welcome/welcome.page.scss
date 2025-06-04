@@ -1,0 +1,66 @@
+ion-content {
+  --background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.graduation-icon {
+  margin-bottom: 20px;
+}
+
+.app-name {
+  font-size: 48px;
+  font-weight: bold;
+  color: #C016F5;
+  margin: 0;
+}
+
+.welcome-text {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.welcome-text h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.welcome-text p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 280px;
+}
+
+.buttons-container {
+  padding: 0 16px;
+}
+
+.login-button {
+  --background: #6A0DAD;
+  --background-activated: #5a0b94;
+  --border-radius: 8px;
+  --color: #ffffff;
+  margin-bottom: 16px;
+  font-weight: 500;
+  height: 48px;
+}
+
+.register-button {
+  --border-color: #000000;
+  --color: #000000;
+  --border-radius: 8px;
+  font-weight: 500;
+  height: 48px;
+}

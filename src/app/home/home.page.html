@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Hola
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Perfil del usuario -->
+  <div class="profile-container" (click)="goToProfile()">
+    <div class="profile-avatar">
+      <ion-icon name="person"></ion-icon>
+    </div>
+    <div class="profile-name">{{ username }}</div>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Título de la sección -->
+  <h1 class="courses-title">Cursos</h1>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Cuadrícula de cursos -->
+  <div class="courses-grid">
+    <!-- Primer curso -->
+    <div class="course-card" (click)="goToCourse(1)">
+      <h2 class="course-number">1º</h2>
+      <p class="course-name">Primer Curso</p>
+    </div>
+
+    <!-- Segundo curso -->
+    <div class="course-card" (click)="goToCourse(2)">
+      <h2 class="course-number">2º</h2>
+      <p class="course-name">Segundo Curso</p>
+    </div>
+
+    <!-- Tercer curso -->
+    <div class="course-card" (click)="goToCourse(3)">
+      <h2 class="course-number">3º</h2>
+      <p class="course-name">Tercer Curso</p>
+    </div>
+
+    <!-- Cuarto curso -->
+    <div class="course-card" (click)="goToCourse(4)">
+      <h2 class="course-number">4º</h2>
+      <p class="course-name">Cuarto Curso</p>
+    </div>
   </div>
 </ion-content>

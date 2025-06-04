@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Programación 1 - \"Apuntes Tema 1.pdf\"",
+    "fileName": "apuntes_tema1_programacion.pdf",
+    "subjectId": 101,
+    "subjectName": "PROGRAMACIÓN 1",
+    "fileSize": "2.5 MB",
+    "uploadDate": "2025-05-28",
+    "downloadUrl": "assets/documents/apuntes_tema1_programacion.pdf"
+  },
+  {
+    "id": 2,
+    "name": "Matemáticas 1 - \"Resumen integrales.docx\"",
+    "fileName": "resumen_integrales_matematicas.docx",
+    "subjectId": 102,
+    "subjectName": "MATEMÁTICAS 1",
+    "fileSize": "1.8 MB",
+    "uploadDate": "2025-04-27",
+    "downloadUrl": "assets/documents/resumen_integrales_matematicas.docx"
+  },
+  {
+    "id": 3,
+    "name": "Matemáticas 2 - \"Parcial2023.pdf\"",
+    "fileName": "parcial2023_matematicas2.pdf",
+    "subjectId": 107,
+    "subjectName": "MATEMÁTICAS 2",
+    "fileSize": "3.2 MB",
+    "uploadDate": "2025-05-20",
+    "downloadUrl": "assets/documents/parcial2023_matematicas2.pdf"
+  },
+  {
+    "id": 4,
+    "name": "Fundamentos de las Bases de Datos - \"Ejercicios SQL.pdf\"",
+    "fileName": "ejercicios_sql_bbdd.pdf",
+    "subjectId": 109,
+    "subjectName": "FUNDAMENTOS DE LAS BASES DE DATOS",
+    "fileSize": "4.1 MB",
+    "uploadDate": "2025-05-22",
+    "downloadUrl": "assets/documents/ejercicios_sql_bbdd.pdf"
+  },
+  {
+    "id": 5,
+    "name": "Estructura de los Computadores - \"Esquemas ARM.png\"",
+    "fileName": "esquemas_arm_estructura.png",
+    "subjectId": 110,
+    "subjectName": "ESTRUCTURA DE LOS COMPUTADORES",
+    "fileSize": "850 KB",
+    "uploadDate": "2025-05-26",
+    "downloadUrl": "assets/documents/esquemas_arm_estructura.png"
+  }
+]

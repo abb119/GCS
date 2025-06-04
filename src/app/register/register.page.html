@@ -1,0 +1,72 @@
+<ion-content class="ion-padding">
+  <div class="logo-container">
+    <div class="graduation-icon">
+      <svg width="70" height="70" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M45 20L25 10L5 20L25 30L45 20ZM45 20V30" stroke="#C016F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 25V35C15 36.3261 16.0536 37.5979 18.0481 38.5355C20.0426 39.4732 22.4587 40 25 40C27.5413 40 29.9574 39.4732 31.9519 38.5355C33.9464 37.5979 35 36.3261 35 35V25" stroke="#C016F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M45 30C45 30 41 35 45 40" stroke="#C016F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1 class="app-name">NODO</h1>
+  </div>
+
+  <div class="register-form">
+    <h1 class="register-title">Crear cuenta</h1>
+    
+    <div class="form-field">
+      <ion-label>Usuario</ion-label>
+      <ion-item class="custom-input">
+        <ion-input [(ngModel)]="username" placeholder=""></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="form-field">
+      <ion-label>Email</ion-label>
+      <ion-item class="custom-input">
+        <ion-input type="email" [(ngModel)]="email" (ionChange)="validateEmail()"></ion-input>
+        <ion-icon *ngIf="email && isValidEmail" name="checkmark-circle" slot="end" class="valid-icon"></ion-icon>
+        <ion-icon *ngIf="email && !isValidEmail" name="close-circle" slot="end" class="invalid-icon"></ion-icon>
+      </ion-item>
+    </div>
+
+    <div class="form-field">
+      <ion-label>Contraseña</ion-label>
+      <ion-item class="custom-input">
+        <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" (ionChange)="validatePassword()"></ion-input>
+        <ion-icon (click)="togglePasswordVisibility()" [name]="!showPassword ? 'eye-off' : 'eye'" slot="end" class="password-toggle"></ion-icon>
+      </ion-item>
+      
+      <!-- Añadir requisitos de contraseña -->
+      <div class="password-requirements" *ngIf="password">
+        <div class="requirement" [ngClass]="{'valid': hasMinLength}">
+          <ion-icon [name]="hasMinLength ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+          <span>Mínimo 8 caracteres</span>
+        </div>
+        <div class="requirement" [ngClass]="{'valid': hasUpperCase}">
+          <ion-icon [name]="hasUpperCase ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+          <span>Al menos una mayúscula</span>
+        </div>
+        <div class="requirement" [ngClass]="{'valid': hasNumber}">
+          <ion-icon [name]="hasNumber ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+          <span>Al menos un número</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms-container">
+      <ion-checkbox [(ngModel)]="acceptTerms" class="terms-checkbox"></ion-checkbox>
+      <span class="terms-text">Acepto los términos y la política de privacidad</span>
+    </div>
+
+    <ion-button expand="block" class="signup-button" [disabled]="!isValidForm()" 
+                [ngClass]="{'disabled': !isValidForm()}" (click)="register()">
+      Registrarse
+    </ion-button>
+
+    <div class="login-prompt">
+      <span>¿Ya tienes una cuenta?</span>
+      <ion-button fill="clear" class="login-link" (click)="goToLogin()">Log In</ion-button>
+    </div>
+  </div>
+</ion-content>
+
