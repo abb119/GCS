@@ -1,0 +1,136 @@
+ion-content {
+  --background: #f8f8f8;
+}
+
+.add-notes-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  .back-icon {
+    margin-right: 0.75rem;
+    color: #5b2a9a;
+  }
+  .title {
+    font-weight: bold;
+    margin: 0;
+    color: #5b2a9a;
+  }
+}
+
+.upload-box {
+  border: 2px dashed #e0d7f3;
+  border-radius: 1rem;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: #faf7fd;
+
+  .upload-icon {
+    color: #5b2a9a;
+    font-size: 2.2rem;
+  }
+  .upload-btn-row {
+    margin-top: 1rem;
+    .explore-btn {
+      background: #5b2a9a;
+      color: #fff;
+      border: none;
+      border-radius: 1.5rem;
+      padding: 0.5rem 2rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+      &:hover {
+        background: #4a217a;
+      }
+    }
+  }
+}
+
+.file-list {
+  background: #f6f6fa;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(91, 42, 154, 0.05);
+
+  .file-item {
+    margin-bottom: 1.2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .file-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .file-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .file-type {
+      color: #a0a0b2;
+      font-size: 0.85rem;
+    }
+    .file-actions {
+      .action-icon {
+        margin-left: 0.5rem;
+        color: #bdbdbd;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: color 0.2s;
+        &:hover {
+          color: #5b2a9a;
+        }
+      }
+    }
+    .progress-bar-container {
+      background: #eaeaea;
+      border-radius: 4px;
+      height: 6px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+      .progress-bar {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.4s;
+        &.info {
+          background: #2fd6c7;
+        }
+        &.warning {
+          background: #ffe066;
+        }
+        &.danger {
+          background: #ff6b6b;
+        }
+        &.success {
+          background: #51cf66;
+        }
+      }
+    }
+  }
+}
+
+.confirm-btn {
+  width: 100%;
+  padding: 0.75rem 0;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background: #111;
+  }
+}

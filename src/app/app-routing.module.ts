@@ -64,6 +64,18 @@ const routes: Routes = [
   {
     path: 'practice-notes/:subjectId',
     loadChildren: () => import('./practice-notes/practice-notes.module').then(m => m.PracticeNotesPageModule)
+  },
+  {
+    path: 'add-notes',
+    loadChildren: () => import('./add-notes/add-notes.module').then( m => m.AddNotesPageModule)
+  },
+  {
+    path: 'add-notes',
+    loadChildren: () => import('./add-notes/add-notes.module').then( m => m.AddNotesPageModule)
+  },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./favorites/favorites.module').then( m => m.FavoritesPageModule)
   }
 
 
