@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +25,8 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -67,21 +69,35 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    if (!this.isValidForm()) {
-      return;
+    if (!this.isValidForm()) return;
+
+    const user = {
+      username: this.username,
+      email: this.email,
+      password: this.password
+    };
+
+    const success = this.authService.registerUser(user);
+
+    if (success) {
+      const toast = await this.toastController.create({
+        message: 'Registro exitoso. Inicia sesión.',
+        duration: 2000,
+        color: 'success'
+      });
+      toast.present();
+
+      setTimeout(() => {
+        this.router.navigateByUrl('/login');
+      }, 2000);
+    } else {
+      const toast = await this.toastController.create({
+        message: 'El usuario ya existe con ese email.',
+        duration: 2000,
+        color: 'danger'
+      });
+      toast.present();
     }
-    
-    // Simulación de registro exitoso (sería reemplazado por registro real)
-    const toast = await this.toastController.create({
-      message: 'Registro exitoso. Inicia sesión.',
-      duration: 2000,
-      color: 'success'
-    });
-    toast.present();
-    
-    setTimeout(() => {
-      this.router.navigateByUrl('/login');
-    }, 2000);
   }
 
   goToLogin() {
