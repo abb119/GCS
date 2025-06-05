@@ -2,9 +2,17 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
+interface User {
+  username: string;
+  email: string;
+  password: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AuthService {
   private token: string | null = null;
   
@@ -19,18 +27,39 @@ export class AuthService {
     return !!this.token;
   }
 
+  registerUser(user: User): boolean {
+    // Obtener los usuarios existentes
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Validar si ya existe un usuario con el mismo email
+    if (users.find((u: User) => u.email === user.email)) {
+      return false; // ya existe
+    }
+
+    // Agregar el nuevo usuario
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+    return true;
+  }
+
   async login(email: string, password: string): Promise<boolean> {
-    // Esta es una implementación simple para desarrollo
-    // En producción, esta validación vendría de un backend
-    if (email === 'user@example.com' && password === 'password') {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Buscar al usuario por email
+    const user = users.find((u: User) => u.email === email && u.password === password);
+
+    if (user) {
       const fakeToken = 'fake-jwt-token-' + Math.random().toString(36).substr(2);
       localStorage.setItem('token', fakeToken);
-      localStorage.setItem('username', 'Usuario Demo');
+      localStorage.setItem('username', user.username);
       this.token = fakeToken;
       return true;
     }
+
+    // Usuario no encontrado o contraseña incorrecta
     return false;
   }
+
 
   logout(): void {
     localStorage.removeItem('token');
