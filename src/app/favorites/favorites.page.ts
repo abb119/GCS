@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../services/storage.service';
 import { Note, NotesService } from '../services/notes.service';
 import { ToastController } from '@ionic/angular';
+import { ViewWillEnter } from '@ionic/angular';
 
 @Component({
   selector: 'app-favorites',
@@ -9,9 +10,10 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./favorites.page.scss'],
   standalone: false,
 })
-export class FavoritesPage implements OnInit {
+export class FavoritesPage implements OnInit, ViewWillEnter {
   favoriteNotes: any[] = [];
   notes: any[] = [];
+  favoriteIndices: any[] = []; // Array para almacenar los índices de notas favoritas
 
   constructor(
     private storageService: StorageService,
@@ -19,60 +21,44 @@ export class FavoritesPage implements OnInit {
     private toastController: ToastController
   ) {}
 
-  async ngOnInit() {
-    // Get favorite indices
-    const indicesRaw =
-      (await this.storageService.get('favorite-notes')) || '[]';
-    let favoriteIndices: number[];
-    console.log('Raw favorite indices:', indicesRaw);
-    try {
-      const parsed = indicesRaw; // JSON.parse(indicesRaw)
-      console.log('Parsed favorite indices:', parsed);
-      if (Array.isArray(parsed)) {
-        favoriteIndices = parsed;
-      } else if (typeof parsed === 'number') {
-        favoriteIndices = [parsed];
-      } else {
-        favoriteIndices = [];
-      }
-    } catch {
-      favoriteIndices = [];
-    }
+  ngOnInit(): void {}
 
-    // Get all notes
+  async ionViewWillEnter() {
+    this.favoriteNotes = [];
+
+    this.favoriteIndices =
+      (await this.storageService.get('favorite-notes')) || '[]';
+
     this.notesService.getPracticeNotes().subscribe((notes) => {
       this.notes = notes;
 
-      // Map indices to notes
-      this.favoriteNotes = favoriteIndices
-        .map((idx) => this.notes[idx])
-        .filter((note) => note !== undefined);
-
-      console.log('Índices de notas favoritas:', favoriteIndices);
+      console.log('Índices de notas favoritas:', this.favoriteIndices);
       console.log('Todas las notas:', this.notes);
+
+      for (let i = 0; i < this.favoriteIndices.length; i++) {
+        console.log('Índice favorito:', this.favoriteIndices[i]);
+        console.log('Nota favorita:', this.notes[this.favoriteIndices[i] - 1]);
+        this.favoriteNotes.push(this.notes[this.favoriteIndices[i] - 1]);
+      }
       console.log('Notas favoritas cargadas:', this.favoriteNotes);
     });
   }
 
   isNoteFavorite(noteId: string): boolean {
-    return this.favoriteNotes.includes(noteId);
+    return true;
   }
 
   async toggleFavorite(note: Note) {
-    const index = this.favoriteNotes.indexOf(note.id);
+    const index = this.favoriteIndices.indexOf(note.id);
+    console.log('Índice de la nota en favoritos:', index);
+    console.log('Nota a eliminar:', note.id);
 
-    if (index !== -1) {
-      // Eliminar de favoritos
-      this.favoriteNotes.splice(index, 1);
-      this.presentToast('Eliminado de favoritos');
-    } else {
-      // Agregar a favoritos
-      this.favoriteNotes.push(note.id);
-      this.presentToast('Añadido a favoritos');
-    }
+    this.favoriteIndices.splice(index, 1);
+    this.favoriteNotes.splice(index, 1);
+    this.presentToast('Eliminado de favoritos');
 
     // Guardar en localStorage
-    await this.storageService.set('favorite-notes', this.favoriteNotes);
+    await this.storageService.set('favorite-notes', this.favoriteIndices);
   }
 
   async presentToast(message: string) {
