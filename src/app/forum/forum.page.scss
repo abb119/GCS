@@ -1,0 +1,61 @@
+ion-content {
+    --background: hwb(241 76% 1%); // fondo blanco total
+    --padding-bottom: 70px; // deja espacio para la barra fija
+  }
+  
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .message-row {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .message-row.own-message {
+    justify-content: flex-end;
+  }
+  
+  .message-bubble {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #ececf1; // gris claro para otros usuarios
+    color: #000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+    font-size: 15px;
+  }
+  
+  .message-row.own-message .message-bubble {
+    background-color: #e4d4ff; // violeta clarito para ti
+    color: #000;
+  }
+  
+  .input-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    z-index: 10;
+  }
+  
+  .chat-input {
+    flex: 1;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    color: #000 !important; // <--- fuerza texto negro
+    --color: #000 !important; // <--- Ionic usa esta var para el texto interno
+    background-color: #f7f7f7; // si quieres un fondo suave en el input
+  }
+  

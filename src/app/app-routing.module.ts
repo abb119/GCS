@@ -9,6 +9,10 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'theory-notes/:subjectId',
+    loadChildren: () => import('./theory-notes/theory-notes.module').then(m => m.TheoryNotesPageModule)
+  },  
+  {
     path: '',
     redirectTo: 'welcome',
     pathMatch: 'full'
@@ -17,6 +21,10 @@ const routes: Routes = [
     path: 'welcome',
     loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
   },
+  {
+    path: 'forum',
+    loadChildren: () => import('./forum/forum.module').then(m => m.ForumPageModule)
+  },  
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -64,7 +72,17 @@ const routes: Routes = [
   {
     path: 'practice-notes/:subjectId',
     loadChildren: () => import('./practice-notes/practice-notes.module').then(m => m.PracticeNotesPageModule)
+  },
+  {
+    path: 'forum',
+    loadChildren: () => import('./forum/forum.module').then( m => m.ForumPageModule)
+  },
+  {
+    path: 'theory-notes',
+    loadChildren: () => import('./theory-notes/theory-notes.module').then( m => m.TheoryNotesPageModule)
   }
+
+
 
 
 

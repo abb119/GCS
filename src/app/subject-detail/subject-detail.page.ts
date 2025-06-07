@@ -136,7 +136,9 @@ export class SubjectDetailPage implements OnInit {
     // this.router.navigate(['/theory', this.subjectData.id]);
     
     // Por ahora, volver a home
-    this.router.navigate(['/home']);
+    console.log('Navegando a Teoría');
+    this.router.navigate(['/theory-notes', this.subjectData.id]);
+
   }
 
   goToPractices() {
@@ -150,10 +152,6 @@ export class SubjectDetailPage implements OnInit {
 
   goToForum() {
     console.log('Navegando al Foro de difusión');
-    // TODO: Navegar a la página del foro cuando esté implementada
-    // this.router.navigate(['/forum', this.subjectData.id]);
-    
-    // Por ahora, volver a home
-    this.router.navigate(['/home']);
-  }
+    this.router.navigate(['/forum']);
+  }  
 }

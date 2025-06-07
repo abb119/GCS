@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Foro - Programación 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="chat-container">
+    <div *ngFor="let msg of messages" class="message-row" [ngClass]="{'own-message': msg.user === 'Tú'}">
+      <div class="message-bubble">
+        <strong *ngIf="msg.user !== 'Tú'">{{ msg.user }}:</strong>
+        <ng-container [ngSwitch]="msg.type">
+          <p *ngSwitchCase="'text'">{{ msg.text }}</p>
+          <div *ngSwitchCase="'file'">
+            <ion-note>
+              <a [href]="'assets/files/' + msg.fileName" download target="_blank" rel="noopener">
+                {{ msg.fileName }}
+              </a>
+            </ion-note>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!-- Barra de entrada fija abajo -->
+<div class="input-container">
+  <ion-input
+    [(ngModel)]="newMessage"
+    placeholder="Escribe un mensaje..."
+    class="chat-input"
+    color="dark">
+  </ion-input>
+  <ion-button (click)="sendMessage()" size="small">Enviar</ion-button>
+</div>

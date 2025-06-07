@@ -40,6 +40,16 @@ export class NotesService {
       );
   }
 
+  getTheoryNotes(): Observable<Note[]> {
+    return this.http.get<Note[]>('assets/data/theory-notes.json')
+      .pipe(
+        catchError(error => {
+          console.error('Error al cargar apuntes de prácticas:', error);
+          return of([]); // Retorna array vacío en caso de error
+        })
+      );
+  }
+
   /**
    * Obtiene apuntes filtrados por asignatura y tipo
    * @param subjectId ID de la asignatura

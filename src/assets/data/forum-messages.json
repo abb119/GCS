@@ -1,0 +1,24 @@
+[
+    {
+      "user": "Alejandro",
+      "text": "Los apuntes del tema 2 están mal",
+      "type": "text"
+    },
+    {
+      "user": "Tú",
+      "text": "apuntest2.txt",
+      "type": "file",
+      "fileName": "apuntest2.txt"
+    },
+    {
+      "user": "Tú",
+      "text": "He cambiado los errores. ¿Qué os parece?",
+      "type": "text"
+    },
+    {
+      "user": "Marina",
+      "text": "Así está mejor, gracias",
+      "type": "text"
+    }
+  ]
+  
