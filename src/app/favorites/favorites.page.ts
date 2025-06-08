@@ -31,16 +31,21 @@ export class FavoritesPage implements OnInit, ViewWillEnter {
 
     this.notesService.getPracticeNotes().subscribe((notes) => {
       this.notes = notes;
+      this.notesService.getTheoryNotes().subscribe((notes) => {
+        this.notes = this.notes.concat(notes);
+        console.log('Índices de notas favoritas:', this.favoriteIndices);
+        console.log('Todas las notas:', this.notes);
 
-      console.log('Índices de notas favoritas:', this.favoriteIndices);
-      console.log('Todas las notas:', this.notes);
-
-      for (let i = 0; i < this.favoriteIndices.length; i++) {
-        console.log('Índice favorito:', this.favoriteIndices[i]);
-        console.log('Nota favorita:', this.notes[this.favoriteIndices[i] - 1]);
-        this.favoriteNotes.push(this.notes[this.favoriteIndices[i] - 1]);
-      }
-      console.log('Notas favoritas cargadas:', this.favoriteNotes);
+        for (let i = 0; i < this.favoriteIndices.length; i++) {
+          console.log('Índice favorito:', this.favoriteIndices[i]);
+          console.log(
+            'Nota favorita:',
+            this.notes[this.favoriteIndices[i] - 1]
+          );
+          this.favoriteNotes.push(this.notes[this.favoriteIndices[i] - 1]);
+        }
+        console.log('Notas favoritas cargadas:', this.favoriteNotes);
+      });
     });
   }
 
