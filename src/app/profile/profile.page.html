@@ -1,11 +1,16 @@
-<ion-menu side="end" menuId="profileMenu" contentId="profile-content" type="overlay">
+<ion-menu
+  side="end"
+  menuId="profileMenu"
+  contentId="profile-content"
+  type="overlay"
+>
   <div class="menu-header">
     <div class="menu-close" (click)="closeMenu()">
       <ion-icon name="close"></ion-icon>
     </div>
     <h2 class="menu-title">Menú</h2>
   </div>
-  
+
   <div class="menu-content">
     <div class="menu-item" (click)="goToHome()">
       <div class="menu-icon">
@@ -13,7 +18,7 @@
       </div>
       <div class="menu-label">Inicio</div>
     </div>
-    
+
     <div class="menu-item" (click)="logout()">
       <div class="menu-icon">
         <ion-icon name="log-out"></ion-icon>
@@ -21,7 +26,7 @@
       <div class="menu-label">Cerrar sesión</div>
     </div>
   </div>
-  
+
   <div class="menu-footer">
     <div class="app-info">
       <div class="app-name">NODO</div>
@@ -37,7 +42,7 @@
     <div class="back-button" (click)="goBack()">
       <ion-icon name="arrow-back-outline"></ion-icon>
     </div>
-    
+
     <!-- Botón del menú lateral -->
     <div class="menu-button" (click)="openMenu()">
       <ion-icon name="ellipsis-vertical"></ion-icon>
@@ -47,7 +52,10 @@
   <!-- Foto de perfil con botón de edición -->
   <div class="profile-photo-container">
     <div class="profile-photo">
-      <img [src]="userPhoto || 'assets/default-avatar.png'" alt="Foto de perfil">
+      <img
+        [src]="userPhoto || 'assets/default-avatar.png'"
+        alt="Foto de perfil"
+      />
     </div>
     <div class="edit-button" (click)="editProfile()">
       <ion-icon name="pencil"></ion-icon>
@@ -70,31 +78,46 @@
   <div class="documents-section">
     <h2 class="documents-title">Tus documentos</h2>
     <div class="documents-underline"></div>
-    
+
     <!-- Indicador de carga para documentos -->
     <div class="loading-container" *ngIf="isLoadingDocuments">
       <ion-spinner name="crescent" color="primary"></ion-spinner>
       <p>Cargando documentos...</p>
     </div>
-    
+
     <!-- Lista de documentos -->
     <div class="document-list" *ngIf="!isLoadingDocuments">
       <div class="document-item" *ngFor="let document of userDocuments">
         <div class="document-info">
           <span class="document-name">{{ document.name }}</span>
-          <span class="document-details">{{ document.fileSize }} • {{ document.uploadDate }}</span>
+          <span class="document-details"
+            >{{ document.fileSize }} • {{ document.uploadDate }}</span
+          >
         </div>
         <div class="document-actions">
-          <ion-icon name="download-outline" class="download-icon" (click)="downloadDocument(document)"></ion-icon>
-          <ion-icon name="trash-outline" class="delete-icon" (click)="deleteDocument(document)"></ion-icon>
+          <ion-icon
+            name="download-outline"
+            class="download-icon"
+            (click)="downloadDocument(document)"
+          ></ion-icon>
+          <ion-icon
+            name="trash-outline"
+            class="delete-icon"
+            (click)="deleteDocument(document)"
+          ></ion-icon>
         </div>
       </div>
-      
+
       <!-- Mensaje cuando no hay documentos -->
       <div *ngIf="userDocuments.length === 0" class="no-documents">
         <ion-icon name="document-outline"></ion-icon>
         <p>No tienes documentos guardados</p>
       </div>
     </div>
+  </div>
+
+  <div expand="block" routerLink="/favorites" class="favorite-button">
+    <ion-icon name="star" slot="start"></ion-icon>
+    Apuntes favoritos
   </div>
 </ion-content>

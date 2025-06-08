@@ -80,6 +80,18 @@ const routes: Routes = [
   {
     path: 'theory-notes',
     loadChildren: () => import('./theory-notes/theory-notes.module').then( m => m.TheoryNotesPageModule)
+  },
+  {
+    path: 'add-notes',
+    loadChildren: () => import('./add-notes/add-notes.module').then( m => m.AddNotesPageModule)
+  },
+  {
+    path: 'add-notes',
+    loadChildren: () => import('./add-notes/add-notes.module').then( m => m.AddNotesPageModule)
+  },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./favorites/favorites.module').then( m => m.FavoritesPageModule)
   }
 
 

@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+  <div class="add-notes-container">
+    <!-- Back arrow and title -->
+    <div class="header-row">
+      <ion-button fill="clear" class="back-button" routerLink="/practice-notes">
+        <ion-icon
+          name="arrow-back-outline"
+          size="large"
+          class="back-icon"
+        ></ion-icon>
+      </ion-button>
+      <h3 class="title">Añadir apuntes</h3>
+    </div>
+
+    <!-- Upload box -->
+    <div class="upload-box">
+      <ion-icon
+        name="cloud-upload-outline"
+        size="large"
+        class="upload-icon"
+      ></ion-icon>
+      <div class="upload-btn-row">
+        <button class="explore-btn" (click)="fileInput.click()">
+          Explorar
+        </button>
+        <input
+          #fileInput
+          type="file"
+          multiple
+          hidden
+          (change)="onFileSelected($event)"
+        />
+      </div>
+    </div>
+
+    <!-- File list -->
+    <!-- <div class="file-list">
+      <div *ngFor="let file of files; let i = index" class="file-item">
+        <div class="file-row">
+          <div>
+            <span class="file-name">{{ file.name }}</span>
+            <div class="file-type">{{ file.type || 'Archivo' }}</div>
+          </div>
+          <div class="file-actions">
+            <ion-icon name="refresh-outline" class="action-icon"></ion-icon>
+            <ion-icon
+              name="close-outline"
+              class="action-icon"
+              (click)="removeFile(i)"
+            ></ion-icon>
+          </div>
+        </div>
+        <div class="progress-bar-container">
+          <div
+            class="progress-bar"
+            [ngClass]="getProgressBarClass(i)"
+            [style.width.%]="file.progress"
+          ></div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Confirm button -->
+    <button class="confirm-btn" (click)="addNewNote()">Confirmar subida</button>
+  </div>
+</ion-content>

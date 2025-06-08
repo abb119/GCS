@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+  <!-- Back arrow and title -->
+  <div class="header-row">
+    <ion-button fill="clear" class="back-button" routerLink="/profile">
+      <ion-icon
+        name="arrow-back-outline"
+        size="large"
+        class="back-icon"
+      ></ion-icon>
+    </ion-button>
+    <h3 class="title">Apuntes favoritos</h3>
+  </div>
+
+  <ion-list *ngIf="favoriteNotes.length > 0; else noFavorites">
+    <div class="notes-container">
+      <div class="note-card" *ngFor="let note of favoriteNotes">
+        <div class="note-tag">{{ note.subjectId }}</div>
+
+        <div class="note-content">
+          <h3 class="note-title">{{ note.title }}</h3>
+          <p class="note-description">{{ note.description }}</p>
+        </div>
+
+        <div class="note-footer">
+          <span class="note-date">{{ note.date | date: 'dd/MM/yyyy' }}</span>
+          <ion-icon
+            [name]="isNoteFavorite(note.id) ? 'heart' : 'heart-outline'"
+            [class.favorite]="isNoteFavorite(note.id)"
+            (click)="toggleFavorite(note)"
+            class="favorite-icon"
+          >
+          </ion-icon>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+
+  <ng-template #noFavorites>
+    <div class="empty-message">Sin apuntes favoritos.</div>
+  </ng-template>
+</ion-content>
