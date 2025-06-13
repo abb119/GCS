@@ -7,7 +7,20 @@ const routes: Routes = [
   {
     path: '',
     component: AdminPage
-
+  },
+  {
+    path: 'manage-subjects',
+    loadChildren: () =>
+      import('./manage-subjects/manage-subjects.module').then(
+        (m) => m.ManageSubjectsPageModule
+      )
+  },
+  {
+    path: 'manage-resources',
+    loadChildren: () =>
+      import('./manage-resources/manage-resources.module').then(
+        (m) => m.ManageResourcesPageModule
+      )
   }
 ];
 
