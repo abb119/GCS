@@ -7,14 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminPage
-  },
-  {
-    path: 'subjects',
-    loadChildren: () => import('./manage-subjects/manage-subjects.module').then(m => m.ManageSubjectsPageModule)
-  },
-  {
-    path: 'resources',
-    loadChildren: () => import('./manage-resources/manage-resources.module').then(m => m.ManageResourcesPageModule)
+
   }
 ];
 
