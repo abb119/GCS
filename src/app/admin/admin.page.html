@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="header-row">
+    <ion-button fill="clear" class="back-button" (click)="goBack()">
+      <ion-icon name="arrow-back-outline" size="large" class="back-icon"></ion-icon>
+    </ion-button>
+    <h3 class="title">Administración</h3>
+  </div>
+
+  <div class="options-container">
+    <div class="option-card" (click)="manageSubjects()">
+      <ion-icon name="book" class="option-icon"></ion-icon>
+      <span>Administrar asignaturas</span>
+    </div>
+
+    <div class="option-card" (click)="manageResources()">
+      <ion-icon name="document-text" class="option-icon"></ion-icon>
+      <span>Administrar recursos</span>
+    </div>
+  </div>
+</ion-content>
