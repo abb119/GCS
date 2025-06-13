@@ -25,18 +25,19 @@ ion-content {
 }
 
 .option-card {
-  background: linear-gradient(to top, #4a0072, #9c27b0);
-  border-radius: 12px;
+  background: linear-gradient(to right, #6a0dad, #9c27b0);
+  border-radius: 16px;
   padding: 20px;
   display: flex;
   align-items: center;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.2);
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(106, 13, 173, 0.4);
   }
 
   .option-icon {
