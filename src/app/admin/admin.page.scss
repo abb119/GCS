@@ -1,0 +1,46 @@
+ion-content {
+  --background: #f8f8f8;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  .back-icon {
+    margin-right: 0.75rem;
+    color: #5b2a9a;
+  }
+  .title {
+    font-weight: bold;
+    margin: 0;
+    color: #5b2a9a;
+  }
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.option-card {
+  background: linear-gradient(to top, #4a0072, #9c27b0);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .option-icon {
+    font-size: 28px;
+    margin-right: 12px;
+  }
+}
