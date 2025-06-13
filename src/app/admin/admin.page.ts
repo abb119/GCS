@@ -17,12 +17,6 @@ export class AdminPage implements OnInit {
   }
 
   manageSubjects() {
-    // TODO: implement navigation to subjects management
-    console.log('Navegar a administrar asignaturas');
-  }
 
-  manageResources() {
-    // TODO: implement navigation to resources management
-    console.log('Navegar a administrar recursos');
   }
 }

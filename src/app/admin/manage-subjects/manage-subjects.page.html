@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="header-row">
+    <ion-button fill="clear" class="back-button" (click)="goBack()">
+      <ion-icon name="arrow-back-outline" size="large" class="back-icon"></ion-icon>
+    </ion-button>
+    <h3 class="title">Administrar asignaturas</h3>
+  </div>
+
+  <div class="add-row">
+    <ion-input placeholder="Nueva asignatura" [(ngModel)]="newName"></ion-input>
+    <ion-button (click)="addSubject()">Añadir</ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let subject of subjects">
+      <ion-label>{{ subject.name }}</ion-label>
+      <ion-button color="danger" fill="clear" (click)="removeSubject(subject)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
