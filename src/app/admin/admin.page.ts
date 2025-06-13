@@ -17,6 +17,10 @@ export class AdminPage implements OnInit {
   }
 
   manageSubjects() {
+    this.router.navigate(['/admin/manage-subjects']);
+  }
 
+  manageResources() {
+    this.router.navigate(['/admin/manage-resources']);
   }
 }
