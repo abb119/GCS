@@ -18,29 +18,29 @@ ion-content {
   }
 }
 
-.options-container {
+.card-grid {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 16px;
 }
 
 .option-card {
-  background: linear-gradient(to top, #4a0072, #9c27b0);
+  flex: 1;
+  max-width: 180px;
+  text-align: center;
+  --background: linear-gradient(135deg, #4a0072, #9c27b0);
+  color: #fff;
   border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 16px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   .option-icon {
-    font-size: 28px;
-    margin-right: 12px;
+    font-size: 40px;
+    margin-bottom: 8px;
   }
 }
